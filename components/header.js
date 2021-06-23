@@ -39,13 +39,10 @@ const HeaderContent = ({ switchThemes }) => {
                     <Grid xs={12} md={12} justify='flex-end'>
                         <Row gap={1} align='middle'>
                             <Col>
-                                <Link href='#'>Donation</Link>
+                                <Link href='/about'>About</Link>
                             </Col>
                             <Col>
-                                <Link href='#'>About</Link>
-                            </Col>
-                            <Col>
-                                <Link href='#'>Report</Link>
+                                <Link href='/report'>Report</Link>
                             </Col>
                             <Col>| </Col>
                             {/* {session ? (
