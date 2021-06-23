@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { Link, Grid, Row, Col, useTheme, useCurrentState } from '@geist-ui/react'
-import { Square, Sun, Moon, Users, LogOut } from '@geist-ui/react-icons'
+import { Sun, Moon, Users, LogOut } from '@geist-ui/react-icons'
+
+import { useSession } from 'next-auth/client'
 
 // import '@/styles/style.css'
 
@@ -8,6 +10,8 @@ const HeaderContent = ({ switchThemes }) => {
     const theme = useTheme()
     const isDark = theme.type === 'light'
     const [fixed, setFixed] = useCurrentState(false)
+
+    const [session, loading] = useSession()
 
     useEffect(() => {
         const scrollHandler = () => {
@@ -17,6 +21,8 @@ const HeaderContent = ({ switchThemes }) => {
         document.addEventListener('scroll', scrollHandler)
         return () => document.removeEventListener('scroll', scrollHandler)
     }, [fixed])
+
+    if (loading) return null
 
     return (
         <>
@@ -41,16 +47,20 @@ const HeaderContent = ({ switchThemes }) => {
                             <Col>
                                 <Link href='#'>Report</Link>
                             </Col>
-                            {/* {authState.userId ? (
-                                    <Link href='#'>
-                                        <LogOut size={16} onClick={signOut} />
-                                    </Link>
-                                ) : (
+                            <Col>| </Col>
+                            {/* {session ? (
+                                <>
+                                <Link href='#'>
+                                    <LogOut size={16} onClick={signOut} />
+                                </Link>
+                                </>
+                            ) : (
+                                <>
                                     <Link href='/login'>
                                         <Users size={16} />
                                     </Link>
-                                )} */}
-                            <Col>| </Col>
+                                </>
+                            )} */}
                             <Col>
                                 <div onClick={switchThemes}>{isDark ? <Sun size={16} /> : <Moon size={16} />}</div>
                             </Col>
