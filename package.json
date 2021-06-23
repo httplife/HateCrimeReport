@@ -9,9 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@geist-ui/react": "^2.1.5",
+    "@geist-ui/react-icons": "^1.0.1",
+    "chart.js": "^3.3.2",
     "next": "11.0.0",
+    "next-auth": "^3.27.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-chartjs-2": "^3.0.3",
+    "react-dom": "17.0.2",
+    "react-map-gl": "^6.1.16",
+    "react-simple-maps": "^2.3.0",
+    "react-twitter-embed": "^3.0.3",
+    "swr": "^0.5.6"
   },
   "devDependencies": {
     "eslint": "7.29.0",
