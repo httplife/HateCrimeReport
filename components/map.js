@@ -6,9 +6,9 @@ const MAPBOX_TOKEN = 'pk.eyJ1IjoibmxzdG9tIiwiYSI6ImNrcGJ0eDZ0bzExMmwydm9ma2lwc21
 
 export default function Map() {
     const [viewport, setViewport] = useState({
-        latitude: 37.7577,
-        longitude: -122.4376,
-        zoom: 4
+        latitude: 37.0902,
+        longitude: -95.7129,
+        zoom: 2
     })
 
     return (
