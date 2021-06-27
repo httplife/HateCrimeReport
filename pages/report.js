@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/client'
 
-import { Row, Col, Input, Spacer, Textarea, Button } from '@geist-ui/react'
+import { Row, Col, Input, Spacer, Textarea, Button, Grid } from '@geist-ui/react'
 
 import Layout from '../layouts/simple'
 import TableList from '@/components/incidentTable'
 
 import Router from 'next/router'
 
-export default function ReportPage() {
+export default function SubmitPage() {
     const [session, loading] = useSession()
     const [content, setContent] = useState()
 
@@ -34,42 +34,38 @@ export default function ReportPage() {
 
     // If session exists, display content
     return (
-        <Layout>
-            <Spacer y={2} />
-            <Row gap={2}>
-                <Col span={12}>
-                    <Input placeholder='Date Range' clearable>
-                        Date
-                    </Input>
-                </Col>
-                <Col span={12}>
-                    <Input placeholder='Location' clearable>
-                        Location
-                    </Input>
-                </Col>
-            </Row>
-            <Spacer y={2} />
-            <Row>
-                <Col span={2}></Col>
-                <Col span={20}>
-                    <Input placeholder='Link' clearable width='100%'>
-                        URL
-                    </Input>
-                </Col>
-                <Col span={2}></Col>
-            </Row>
-            <Spacer y={2} />
-            <Row>
-                <Col span={2}></Col>
-
-                <Col span={20}>
-                    <Textarea width='100%' placeholder='Please enter incident description.' />
-                </Col>
-                <Col span={2}></Col>
-            </Row>
-            <Row>
-                <TableList />
-            </Row>
-        </Layout>
+        <>
+            <Layout>
+                <Grid.Container gap={0.8}>
+                    <Grid xs={12} AlignContent='center'>
+                        <Input placeholder='Date Range' clearable>
+                            Date
+                        </Input>
+                    </Grid>
+                    <Grid xs={12} alignContent='flex-start'>
+                        <Input placeholder='Location' clearable>
+                            Location
+                        </Input>
+                    </Grid>
+                    <Grid xs={24}>
+                        <Input placeholder='Link' clearable width='100%'>
+                            URL
+                        </Input>
+                    </Grid>
+                    <Grid xs={24}>
+                        <Textarea width='100%' placeholder='Please enter incident description.' />
+                    </Grid>
+                    <Grid AlignContent='center'>
+                        <Button auto>Submit</Button>
+                    </Grid>
+                </Grid.Container>
+                <Spacer y={3} />
+                <Grid.Container>
+                    <Grid xs={24}>
+                        <TableList />
+                    </Grid>
+                </Grid.Container>
+            </Layout>
+        </>
     )
 }

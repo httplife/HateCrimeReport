@@ -44,37 +44,43 @@ const LoginPage = ({ switchThemes, providers, csrfToken }) => {
                 <Col span={16}>
                     <Grid.Container gap={0.8} justify='center'>
                         {Object.values(providers).map((provider) => {
-                            // if (provider.name === 'Email') {
-                            //     return (
-                            //         <form onSubmit={handleSubmit}>
-                            //             <input name='csrfToken' type='hidden' defaultValue={csrfToken} />
-                            //             <Grid xs={24}>
-                            //                 <Grid.Container gap={0.5} justify='center'>
-                            //                     <Grid xs={16}>
-                            //                         <Input
-                            //                             icon={<Mail />}
-                            //                             size='small'
-                            //                             placeholder='email'
-                            //                             value={email}
-                            //                             onChange={(e) => setEmail(e.target.value)}
-                            //                         />
-                            //                     </Grid>
-                            //                     <Grid xs>
-                            //                         <Row align='middle'>
-                            //                             <Button htmlType='submit' size='mini' auto type='secondary' ghost>
-                            //                                 Sign Up
-                            //                             </Button>
-                            //                         </Row>
-                            //                     </Grid>
-                            //                 </Grid.Container>
-                            //             </Grid>
-                            //         </form>
-                            //     )
-                            // }
+                            if (provider.name === 'Email') {
+                                return (
+                                    <form onSubmit={handleSubmit}>
+                                        <input name='csrfToken' type='hidden' defaultValue={csrfToken} />
+                                        <Grid xs={24}>
+                                            <Grid.Container gap={0.5} justify='center'>
+                                                <Grid xs={16}>
+                                                    <Input
+                                                        icon={<Mail />}
+                                                        size='small'
+                                                        placeholder='email'
+                                                        value={email}
+                                                        onChange={(e) => setEmail(e.target.value)}
+                                                    />
+                                                </Grid>
+                                                <Grid xs>
+                                                    <Row align='middle'>
+                                                        <Button
+                                                            htmlType='submit'
+                                                            size='mini'
+                                                            auto
+                                                            type='secondary'
+                                                            ghost
+                                                        >
+                                                            Sign Up
+                                                        </Button>
+                                                    </Row>
+                                                </Grid>
+                                            </Grid.Container>
+                                        </Grid>
+                                    </form>
+                                )
+                            }
 
-                            // if (provider.name === 'Credentials') {
-                            //     return
-                            // }
+                            if (provider.name === 'Credentials') {
+                                return
+                            }
 
                             if (provider.name === 'Wechat') {
                                 return (

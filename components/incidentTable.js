@@ -5,7 +5,7 @@ import useSWR from 'swr'
 import fetcher from '@/hooks/fetcher'
 
 export default function TableList() {
-    const { data, error } = useSWR('/api/getIncidents', fetcher)
+    const { data, error } = useSWR(`/api/getIncidents`, fetcher)
 
     if (error) return <div>failed to load</div>
     if (!data) return <div>loading...</div>
@@ -23,7 +23,7 @@ export default function TableList() {
                 </Grid>
 
                 <Grid>
-                    <Pagination count={5}>
+                    <Pagination count={6}>
                         <Pagination.Next>
                             <ChevronRight />
                         </Pagination.Next>

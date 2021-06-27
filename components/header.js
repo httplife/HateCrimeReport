@@ -42,6 +42,9 @@ const HeaderContent = ({ switchThemes }) => {
                                 <Link href='/about'>About</Link>
                             </Col>
                             <Col>
+                                <Link href='/incidents'>Incidents</Link>
+                            </Col>
+                            <Col>
                                 <Link href='/report'>Report</Link>
                             </Col>
                             <Col>| </Col>

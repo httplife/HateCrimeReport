@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { GeistProvider, CssBaseline } from '@geist-ui/react'
 
 import { Provider } from 'next-auth/client'
+import Head from 'next/head'
 
 const Application = ({ Component, pageProps }) => {
     const [themeType, setThemeType] = useState('light')
@@ -15,6 +16,12 @@ const Application = ({ Component, pageProps }) => {
     return (
         <Provider session={pageProps.session}>
             <GeistProvider themeType={themeType}>
+                <Head>
+                    <title>Hate Cripe Report</title>
+                    <meta charSet='utf-8' />
+                    <link rel='icon' href='/favicon.ico' />
+                    <meta name='viewport' content='initial-scale=1.0, width=device-width' />
+                </Head>
                 <CssBaseline />
                 <Component switchThemes={switchThemes} {...pageProps} />
             </GeistProvider>
