@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from 'react'
 import { useSession } from 'next-auth/client'
 
-import { Grid, Input, Spacer, Text, Button, AutoComplete } from '@geist-ui/react'
+import { Grid, Input, Spacer, Button, AutoComplete } from '@geist-ui/react'
 
 import Layout from '../layouts/simple'
 import TableList from '@/components/incidentTable'
 
 import Router from 'next/router'
 
-export default function ReportPage() {
+export default function ReportPage({ switchThemes }) {
     const [session, loading] = useSession()
     const [content, setContent] = useState()
 
@@ -54,7 +54,7 @@ export default function ReportPage() {
     if (!session) {
         // Router.push('/')
         return (
-            <Layout>
+            <Layout switchThemes={switchThemes}>
                 <Grid.Container gap={0.8}>
                     <Grid xs={12} AlignContent='center'>
                         <Input placeholder='Date Range' clearable>

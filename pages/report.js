@@ -8,7 +8,7 @@ import TableList from '@/components/incidentTable'
 
 import Router from 'next/router'
 
-export default function SubmitPage() {
+export default function SubmitPage({ switchThemes }) {
     const [session, loading] = useSession()
     const [content, setContent] = useState()
 
@@ -35,7 +35,7 @@ export default function SubmitPage() {
     // If session exists, display content
     return (
         <>
-            <Layout>
+            <Layout switchThemes={switchThemes}>
                 <Grid.Container gap={0.8}>
                     <Grid xs={12} AlignContent='center'>
                         <Input placeholder='Date Range' clearable>
