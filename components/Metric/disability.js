@@ -10,7 +10,7 @@ export default function Dsiability() {
 
     // const stars = format(data?.stars)
     const stars = data?.stars.toLocaleString()
-    const link = 'https://github.com/leerob'
+    const link = 'https://github.com/httplife'
 
     return <MetricCard header='Disability' link={link} metric={stars} />
 }

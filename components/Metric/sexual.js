@@ -10,7 +10,7 @@ export default function SexualOrientation() {
 
     // const stars = format(data?.stars)
     const stars = data?.stars.toLocaleString()
-    const link = 'https://github.com/leerob'
+    const link = 'https://github.com/httplife'
 
     return <MetricCard header='Sexual Orientation' link={link} metric={stars} />
 }

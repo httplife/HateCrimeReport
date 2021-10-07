@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useSession } from 'next-auth/client'
 
-import { Row, Col, Input, Spacer, Textarea, Button, Grid } from '@geist-ui/react'
+import { Input, Spacer, Textarea, Button, Grid } from '@geist-ui/react'
 
 import Layout from '../layouts/simple'
 import TableList from '@/components/incidentTable'
@@ -59,7 +59,7 @@ export default function SubmitPage({ switchThemes }) {
                         <Button auto>Submit</Button>
                     </Grid>
                 </Grid.Container>
-                <Spacer y={3} />
+                <Spacer h={3} />
                 <Grid.Container>
                     <Grid xs={24}>
                         <TableList />

@@ -1,6 +1,6 @@
 import { Grid } from '@geist-ui/react'
 
-import Total from './total'
+import TotalIncidents from './total'
 import Race from './race'
 import Religion from './religion.js'
 import SexualOrientation from './sexual.js'
@@ -14,7 +14,7 @@ export default function Summary() {
     return (
         <Grid.Container gap={0.8} justify='center'>
             <Grid xs={6}>
-                <Total />
+                <TotalIncidents />
             </Grid>
             <Grid xs={6}>
                 <Race />

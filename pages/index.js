@@ -16,7 +16,7 @@ export default function Home({ switchThemes }) {
     return (
         <Layout switchThemes={switchThemes}>
             <Summary />
-            <Spacer y={3} />
+            <Spacer h={3} />
             <Grid.Container gap={0.8}>
                 <Grid xs={16}>
                     <Map />
@@ -25,7 +25,7 @@ export default function Home({ switchThemes }) {
                     <Tweets />
                 </Grid>
             </Grid.Container>
-            <Spacer y={3} />
+            <Spacer h={3} />
             <Grid.Container>
                 <Grid xs={16}>
                     <HorizontalBarChart />
@@ -41,7 +41,7 @@ export default function Home({ switchThemes }) {
                     </Grid.Container>
                 </Grid>
             </Grid.Container>
-            <Spacer y={3} />
+            <Spacer h={3} />
             <TableList />
         </Layout>
     )

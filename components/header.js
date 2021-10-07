@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Link, Grid, Row, Col, useTheme, useCurrentState } from '@geist-ui/react'
+import { Link, Grid, useTheme, useCurrentState, Spacer } from '@geist-ui/react'
 import { Sun, Moon, Users, LogOut } from '@geist-ui/react-icons'
 
 import { useSession } from 'next-auth/client'
@@ -11,7 +11,7 @@ const HeaderContent = ({ switchThemes }) => {
     const isDark = theme.type === 'light'
     const [fixed, setFixed] = useCurrentState(false)
 
-    const [session, loading] = useSession()
+    const [session, loading] = useSession(true)
 
     useEffect(() => {
         const scrollHandler = () => {
@@ -26,48 +26,54 @@ const HeaderContent = ({ switchThemes }) => {
 
     return (
         <>
-            <Row style={{ marginTop: '15px' }}>
-                <Grid.Container justify='center'>
-                    <Grid xs={12} md={12} justify='flex-start'>
-                        <Link href='/'>
-                            <Row align='middle'>
-                                <div className={'logo'} />
-                                <div className={'title'}>hate crime map</div>
-                            </Row>
-                        </Link>
-                    </Grid>
-                    <Grid xs={12} md={12} justify='flex-end'>
-                        <Row gap={1} align='middle'>
-                            <Col>
-                                <Link href='/about'>About</Link>
-                            </Col>
-                            <Col>
-                                <Link href='/incidents'>Incidents</Link>
-                            </Col>
-                            <Col>
-                                <Link href='/report'>Report</Link>
-                            </Col>
-                            <Col>| </Col>
-                            {/* {session ? (
+            <Spacer h={2} />
+            <Grid.Container justify='center'>
+                <Grid xs={12} md={12} justify='flex-start'>
+                    <Link href='/'>
+                        <div className={'logo'} />
+                        <div className={'title'}>hate crime map</div>
+                    </Link>
+                </Grid>
+                <Grid xs={12} md={12} justify='flex-end'>
+                    <Grid.Container gap={2} justify='center'>
+                        <Grid xs={4}>
+                            <Link href='/about'>About</Link>
+                        </Grid>
+                        <Grid xs={4}>
+                            <Link href='/incidents'>Incidents</Link>
+                        </Grid>
+                        <Grid xs={4}>
+                            <Link href='/report'>Report</Link>
+                        </Grid>
+                        <Grid xs={2}>
+                            {session ? (
                                 <>
-                                <Link href='#'>
-                                    <LogOut size={16} onClick={signOut} />
-                                </Link>
+                                    <Link href='#'>
+                                        <LogOut size={20} onClick={signOut} />
+                                    </Link>
                                 </>
                             ) : (
                                 <>
                                     <Link href='/login'>
-                                        <Users size={16} />
+                                        <Users size={20} />
                                     </Link>
                                 </>
-                            )} */}
-                            <Col>
-                                <div onClick={switchThemes}>{isDark ? <Sun size={16} /> : <Moon size={16} />}</div>
-                            </Col>
-                        </Row>
-                    </Grid>
-                </Grid.Container>
-            </Row>
+                            )}
+                        </Grid>
+                        <Grid xs={2}>
+                            {isDark ? (
+                                <Link href='#'>
+                                    <Sun size={20} onClick={switchThemes} />
+                                </Link>
+                            ) : (
+                                <Link href='#'>
+                                    <Moon size={20} onClick={switchThemes} />
+                                </Link>
+                            )}
+                        </Grid>
+                    </Grid.Container>
+                </Grid>
+            </Grid.Container>
         </>
     )
 }

@@ -1,10 +1,12 @@
-import { Row, Text } from '@geist-ui/react'
+import { Grid, Text } from '@geist-ui/react'
 
 const FooterContent = () => {
     return (
-        <Row justify='center'>
-            <Text size={12}>&copy; {new Date().getFullYear()}</Text>
-        </Row>
+        <Grid.Container justify='center'>
+            <Grid xs>
+                <Text size={12}>&copy; {new Date().getFullYear()}</Text>
+            </Grid>
+        </Grid.Container>
     )
 }
 
