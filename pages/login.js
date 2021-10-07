@@ -48,32 +48,25 @@ const LoginPage = ({ switchThemes, providers, csrfToken }) => {
                                 return (
                                     <form onSubmit={handleSubmit}>
                                         <input name='csrfToken' type='hidden' defaultValue={csrfToken} />
-                                        <Grid xs={24}>
-                                            <Grid.Container gap={0.5} justify='center'>
-                                                <Grid xs={16}>
-                                                    <Input
-                                                        icon={<Mail />}
-                                                        size='small'
-                                                        placeholder='email'
-                                                        value={email}
-                                                        onChange={(e) => setEmail(e.target.value)}
-                                                    />
-                                                </Grid>
-                                                <Grid xs>
-                                                    <Row align='middle'>
-                                                        <Button
-                                                            htmlType='submit'
-                                                            size='mini'
-                                                            auto
-                                                            type='secondary'
-                                                            ghost
-                                                        >
-                                                            Sign Up
-                                                        </Button>
-                                                    </Row>
-                                                </Grid>
-                                            </Grid.Container>
-                                        </Grid>
+                                        <Spacer h={4} />
+                                        <h6>or Sign in with your email</h6>
+                                        <Spacer h={4} />
+                                        <Grid.Container gap={0.5} justify='center'>
+                                            <Grid xs={18}>
+                                                <Input
+                                                    placeholder='email'
+                                                    value={email}
+                                                    onChange={(e) => setEmail(e.target.value)}
+                                                />
+                                            </Grid>
+                                            <Grid xs={6}>
+                                                <Row align='middle'>
+                                                    <Button htmlType='submit' size='mini' auto type='secondary' ghost>
+                                                        Sign Up
+                                                    </Button>
+                                                </Row>
+                                            </Grid>
+                                        </Grid.Container>
                                     </form>
                                 )
                             }
