@@ -2,6 +2,10 @@
 
 Project for hate crime tracker, display hate crime incidents in U.S.
 
+## The Design
+
+[Figma](https://www.figma.com/@zgd)
+
 ## Installation
 
 Use the package manager [yarn](https://yarnpkg.com) to install.
